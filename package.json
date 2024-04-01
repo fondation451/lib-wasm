@@ -1,0 +1,69 @@
+{
+  "name": "lib-wasm",
+  "author": "Nicolas Assouad",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Faster implementations of JS functions leveraging WebAssembly",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fondation451/lib-wasm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fondation451/lib-wasm/issues"
+  },
+  "homepage": "https://github.com/fondation451/lib-wasm#README",
+  "keywords": [
+    "stdlib",
+    "wasm",
+    "webassembly",
+    "fastest",
+    "mean",
+    "node",
+    "rust"
+  ],
+  "scripts": {
+    "benchmark": "node --import @swc-node/register/esm-register src/benchmark.ts",
+    "build": "pnpm install && pnpm bundleWasm && pnpm compile",
+    "bundleWasm": "node --import @swc-node/register/esm-register ./scripts/bundleWasm.ts",
+    "check": "cargo check && tsc --noEmit",
+    "compile": "tsc && pnpm rollup && rimraf -rf ./dist && mkdir dist && mv index.js dist/index.js && mv index.d.ts dist/index.d.ts",
+    "clean": "rimraf -rf ./dist && rimraf -rf ./pkg && rimraf -rf ./target && rimraf Cargo.lock && rimraf -rf ./node_modules",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "prepublish": "pnpm quality && pnpm build",
+    "quality": "pnpm check && pnpm lint && pnpm test",
+    "rollup": "rollup --config rollup.config.js && rollup --config rollup-dts.config.js",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@swc-node/register": "^1.9.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.11.30",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.1.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "lodash": "^4.17.21",
+    "markdown-table": "^3.0.3",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "tinybench": "^2.6.0",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
+  },
+  "engines": {
+    "node": ">= 4.9.1"
+  }
+}
