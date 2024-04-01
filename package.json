@@ -1,5 +1,5 @@
 {
-  "name": "lib-wasm",
+  "name": "wasm-lib",
   "author": "Nicolas Assouad",
   "license": "MIT",
   "version": "0.0.1",
@@ -13,12 +13,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fondation451/lib-wasm.git"
+    "url": "git+https://github.com/fondation451/wasm-lib.git"
   },
   "bugs": {
-    "url": "https://github.com/fondation451/lib-wasm/issues"
+    "url": "https://github.com/fondation451/wasm-lib/issues"
   },
-  "homepage": "https://github.com/fondation451/lib-wasm#README",
+  "homepage": "https://github.com/fondation451/wasm-lib#README",
   "keywords": [
     "stdlib",
     "wasm",

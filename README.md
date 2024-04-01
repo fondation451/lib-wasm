@@ -1,1 +1,1 @@
-# lib-wasm
+# wasm-lib
