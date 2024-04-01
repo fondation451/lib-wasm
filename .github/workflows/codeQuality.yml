@@ -20,9 +20,6 @@ jobs:
         with:
           toolchain: stable 18 months ago
 
-      - name: cargo-install
-        uses: baptiste0928/cargo-install@v3.0.1
-
       - name: wasm-pack-action
         uses: jetli/wasm-pack-action@v0.4.0
 
