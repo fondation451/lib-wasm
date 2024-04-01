@@ -23,7 +23,7 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: stable 18 months ago
+          toolchain: stable 1 months ago
 
       - name: wasm-pack-action
         uses: jetli/wasm-pack-action@v0.4.0
