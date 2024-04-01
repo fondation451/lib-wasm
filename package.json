@@ -36,7 +36,7 @@
     "compile": "tsc && pnpm rollup && rimraf -rf ./dist && mkdir dist && mv index.js dist/index.js && mv index.d.ts dist/index.d.ts",
     "clean": "rimraf -rf ./dist && rimraf -rf ./pkg && rimraf -rf ./target && rimraf Cargo.lock && rimraf -rf ./node_modules",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
-    "prepublish": "pnpm quality && pnpm build",
+    "prepublish": "pnpm build && pnpm quality",
     "quality": "pnpm check && pnpm lint && pnpm test",
     "rollup": "rollup --config rollup.config.js && rollup --config rollup-dts.config.js",
     "test": "vitest run"
