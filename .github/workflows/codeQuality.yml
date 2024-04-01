@@ -4,6 +4,7 @@ on: push
 
 env:
   NODE_VERSION: 18
+  RUST_VERSION: 1.77.1
 
 jobs:
   codeQuality:
@@ -17,6 +18,8 @@ jobs:
 
       - name: Setup Rust
         uses: ATiltedTree/setup-rust@v1.0.5
+        with:
+          rust-version: ${{ env.RUST_VERSION }}
 
       - name: cargo-install
         uses: baptiste0928/cargo-install@v3.0.1
