@@ -1,1 +1,1 @@
-# wasm-lib
+# wasmod
